@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Breast Cancer Disease Predictor</title>
+    <style>
+      .container {
+  margin: auto;
+  max-width: 500px;
+  padding: 10px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 28px;
+  margin-top: 30px;
+}
+
+label {
+  display: block;
+  font-size: 24px;
+  margin-top: 30px;
+}
+
+input {
+  font-size: 24px;
+  padding: 5px 10px;
+}
+
+button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 24px;
+  margin-top: 30px;
+  padding: 10px 20px;
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+
+p {
+  font-size: 24px;
+  margin-top: 20px;
+}
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Breast Cancer Disease(BCD) Predictor</h1>
+      <center>
+      <form method="POST" action="/predict">
+        <br>
+        <strong>Radius Mean: </strong>
+        <input name="radiusmean" placeholder="e.g. 17.99 mm" required>
+        <br>
+        <strong>Perimeter Mean: </strong>
+        <input name="perimetermean" placeholder="e.g. 122.8 mm" required>
+        <br>
+        <strong>Concave Points Mean: </strong>
+        <input name="cpmean" placeholder="e.g. 0.1471 mm" required>
+        <br>
+        <strong>Radius Worst: </strong>
+        <input name="radiusw" placeholder="e.g. 25.38 mm" required>
+        <br>
+        <strong>Perimeter Worst: </strong>
+        <input name="perimrterw" placeholder="e.g. 184.6 mm" required>
+        <br>
+        <strong>Area Worst: </strong>
+        <input name="areaw" placeholder="e.g. 2019 mm2" required>
+        <br>
+        <strong>Concave Points Worst: </strong>
+        <input name="cpw" placeholder="e.g. 0.2654 mm" required>
+        <br>
+        <button type="submit">Predict</button>
+      </form>
+      </center>
+
+      {% if prediction_text %}
+        <h2>Predicted type of BCD (Benign / Malignant):</h2>
+        <p>{{ prediction_text }}</p>
+      {% endif %}
+    </div>
+  </body>
+</html>
