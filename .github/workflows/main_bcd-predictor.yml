@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'bcd-predictor'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E730D5B3FF56447C8DDF6FBF308008F0 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_31DD7A0A361F4CBCAFEE431230C56146 }}
